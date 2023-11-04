@@ -47,12 +47,6 @@ endif()
 set(MPP_STATIC ${MPP_PROJECT_NAME}_static)
 set(MPP_SHARED ${MPP_PROJECT_NAME})
 
-if (NOT VPU_PROJECT_NAME)
-    set(VPU_PROJECT_NAME rockchip_vpu)
-endif()
-set(VPU_STATIC ${VPU_PROJECT_NAME}_static)
-set(VPU_SHARED ${VPU_PROJECT_NAME})
-
 # ----------------------------------------------------------------------------
 # set property to classify library kinds
 # ----------------------------------------------------------------------------
@@ -342,9 +336,5 @@ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/inc/
 # ----------------------------------------------------------------------------
 CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/pkgconfig/rockchip_mpp.pc.cmake"
                 "${CMAKE_BINARY_DIR}/rockchip_mpp.pc" @ONLY)
-CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/pkgconfig/rockchip_vpu.pc.cmake"
-                "${CMAKE_BINARY_DIR}/rockchip_vpu.pc" @ONLY)
 install(FILES "${CMAKE_BINARY_DIR}/rockchip_mpp.pc"
-        DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig/")
-install(FILES "${CMAKE_BINARY_DIR}/rockchip_vpu.pc"
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig/")

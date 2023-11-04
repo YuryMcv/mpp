@@ -63,7 +63,4 @@ set_target_properties(${MPP_SHARED} PROPERTIES VERSION ${MPP_VERSION})
 set_target_properties(${MPP_SHARED} PROPERTIES SOVERSION ${MPP_ABI_VERSION})
 endif()
 
-
-add_subdirectory(legacy)
-
 install(TARGETS ${MPP_SHARED} LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")
