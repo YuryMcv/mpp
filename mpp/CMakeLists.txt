@@ -49,18 +49,18 @@ set (MPP_SRC
 set(MPP_VERSION "0")
 set(MPP_ABI_VERSION "1")
 
-add_library(${MPP_SHARED} SHARED ${MPP_SRC})
-set_target_properties(${MPP_SHARED} PROPERTIES FOLDER "mpp")
-set_target_properties(${MPP_SHARED} PROPERTIES CLEAN_DIRECT_OUTPUT 1)
-target_link_libraries(${MPP_SHARED} mpp_codec mpp_hal mpp_vproc ${ASAN_LIB}
+add_library(${MPP_STATIC} STATIC ${MPP_SRC})
+set_target_properties(${MPP_STATIC} PROPERTIES FOLDER "mpp")
+set_target_properties(${MPP_STATIC} PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+target_link_libraries(${MPP_STATIC} mpp_codec mpp_hal mpp_vproc ${ASAN_LIB}
                       ${BEGIN_WHOLE_ARCHIVE} mpp_base ${END_WHOLE_ARCHIVE})
-set_target_properties(${MPP_SHARED} PROPERTIES C_VISIBILITY_PRESET default)
-set_target_properties(${MPP_SHARED} PROPERTIES CXX_VISIBILITY_PRESET default)
+set_target_properties(${MPP_STATIC} PROPERTIES C_VISIBILITY_PRESET default)
+set_target_properties(${MPP_STATIC} PROPERTIES CXX_VISIBILITY_PRESET default)
 
 # NOTE: due to legacy libray naming issue we can not support version on Android
 if (NOT ANDROID)
-set_target_properties(${MPP_SHARED} PROPERTIES VERSION ${MPP_VERSION})
-set_target_properties(${MPP_SHARED} PROPERTIES SOVERSION ${MPP_ABI_VERSION})
+set_target_properties(${MPP_STATIC} PROPERTIES VERSION ${MPP_VERSION})
+set_target_properties(${MPP_STATIC} PROPERTIES SOVERSION ${MPP_ABI_VERSION})
 endif()
 
-install(TARGETS ${MPP_SHARED} LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+install(TARGETS ${MPP_STATIC} LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")

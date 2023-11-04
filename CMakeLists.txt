@@ -44,8 +44,7 @@ include(CheckCXXCompilerFlag)
 if (NOT MPP_PROJECT_NAME)
     set(MPP_PROJECT_NAME rockchip_mpp)
 endif()
-set(MPP_STATIC ${MPP_PROJECT_NAME}_static)
-set(MPP_SHARED ${MPP_PROJECT_NAME})
+set(MPP_STATIC ${MPP_PROJECT_NAME})
 
 # ----------------------------------------------------------------------------
 # set property to classify library kinds
