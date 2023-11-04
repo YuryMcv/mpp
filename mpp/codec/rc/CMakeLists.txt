@@ -21,5 +21,3 @@ add_library(enc_rc STATIC
     )
 
 target_link_libraries(enc_rc mpp_rc)
-
-add_subdirectory(test)

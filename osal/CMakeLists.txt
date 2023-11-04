@@ -93,6 +93,3 @@ if(ANDROID)
         target_link_libraries(osal log stdc++ m)
     endif()
 endif(ANDROID)
-
-# unit test
-add_subdirectory(test)

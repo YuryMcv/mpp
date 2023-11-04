@@ -59,10 +59,6 @@ set(VPU_SHARED ${VPU_PROJECT_NAME})
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(GLOBAL PROPERTY PREDEFINED_TARGETS_FOLDER "CMakeTargets")
 # ----------------------------------------------------------------------------
-# enable test in this project
-# ----------------------------------------------------------------------------
-option(BUILD_TEST "enable test binary building)" ON)
-# ----------------------------------------------------------------------------
 # export json compile commands
 # ----------------------------------------------------------------------------
 set(CMAKE_EXPORT_COMPILE_COMMANDS true)
@@ -317,8 +313,6 @@ list( LENGTH module_list module_size )
 # ----------------------------------------------------------------------------
 # project overall include file
 include_directories(inc)
-# small utile functions for test case
-include_directories(utils)
 
 # ----------------------------------------------------------------------------
 #  osal library
@@ -329,21 +323,11 @@ include_directories(osal/inc)
 add_subdirectory(osal)
 
 # ----------------------------------------------------------------------------
-#  utils for test case
-# ----------------------------------------------------------------------------
-add_subdirectory(utils)
-
-# ----------------------------------------------------------------------------
 #  Media Process Platform library
 # ----------------------------------------------------------------------------
 # Media Process Platform include
 include_directories(mpp/inc)
 add_subdirectory(mpp)
-
-# ----------------------------------------------------------------------------
-#  test / demo
-# ----------------------------------------------------------------------------
-add_subdirectory(test)
 
 # ----------------------------------------------------------------------------
 #  install headers
