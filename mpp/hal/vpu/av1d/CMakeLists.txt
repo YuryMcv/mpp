@@ -18,5 +18,3 @@ add_library(${HAL_AV1D} STATIC
 
 set_target_properties(${HAL_AV1D} PROPERTIES FOLDER "mpp/hal")
 target_link_libraries(${HAL_AV1D} mpp_base)
-
-#add_subdirectory(test)

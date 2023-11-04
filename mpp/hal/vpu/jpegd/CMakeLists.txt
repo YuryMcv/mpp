@@ -20,5 +20,3 @@ add_library(hal_jpegd STATIC
 set_target_properties(hal_jpegd PROPERTIES FOLDER "mpp/hal")
 
     target_link_libraries(hal_jpegd mpp_base)
-
-#add_subdirectory(test)

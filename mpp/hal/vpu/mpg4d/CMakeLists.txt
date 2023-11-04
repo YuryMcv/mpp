@@ -23,5 +23,3 @@ add_library(${HAL_MPEG4D} STATIC
 
 set_target_properties(${HAL_MPEG4D} PROPERTIES FOLDER "mpp/hal")
 target_link_libraries(${HAL_MPEG4D} mpp_base)
-
-#add_subdirectory(test)
