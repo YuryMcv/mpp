@@ -8,5 +8,5 @@ Description: Rockchip Media Process Platform
 Requires.private:
 Version: 1.3.8
 Libs: -L${libdir} -lrockchip_mpp
-Libs.private:
+Libs.private: -lstdc++
 Cflags: -I${includedir}
