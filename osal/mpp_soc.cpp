@@ -915,7 +915,7 @@ static const MppSocInfo mpp_soc_default = {
 
 static void read_soc_name(char *name, RK_S32 size)
 {
-    const char *path = "/proc/device-tree/compatible";
+    const char *path = "/device-tree/compatible";
     RK_S32 fd = open(path, O_RDONLY);
 
     if (fd < 0) {
